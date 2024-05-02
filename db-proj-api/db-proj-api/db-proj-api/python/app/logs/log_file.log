@@ -1,0 +1,2172 @@
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.23.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 102-069-690
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:('ssmith', 'Scott Smith', 'New York')
+ERROR:logger:GET /users - error: invalid literal for int() with base 10: 'ssmith'
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:19:20] "GET /users/ HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 102-069-690
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:('ssmith', 'Scott Smith', 'New York')
+DEBUG:logger:('aking', 'Allen King', 'Dallas')
+DEBUG:logger:('jford', 'Jones Ford', 'Chicago')
+DEBUG:logger:('mmiller', 'Martin Miller', 'Boston')
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:19:48] "GET /users/ HTTP/1.1" 200 -
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:20:17] "[32mGET /users/ssmith HTTP/1.1[0m" 308 -
+INFO:logger:GET /users/<username>
+DEBUG:logger:username: {username}
+DEBUG:logger:GET /users/<username> - parse
+DEBUG:logger:('ssmith', 'Scott Smith', 'New York')
+ERROR:logger:GET /users/<username> - error: invalid literal for int() with base 10: 'ssmith'
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:20:17] "GET /users/ssmith/ HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 102-069-690
+INFO:logger:GET /users/<username>
+DEBUG:logger:username: {username}
+DEBUG:logger:GET /users/<username> - parse
+DEBUG:logger:('ssmith', 'Scott Smith', 'New York')
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:20:26] "GET /users/ssmith/ HTTP/1.1" 200 -
+INFO:logger:POST /users
+DEBUG:logger:POST /users - payload: {'city': 'London', 'username': 'ppopov', 'name': 'Peter Popov'}
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:20:39] "POST /users/ HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:('ssmith', 'Scott Smith', 'New York')
+DEBUG:logger:('aking', 'Allen King', 'Dallas')
+DEBUG:logger:('jford', 'Jones Ford', 'Chicago')
+DEBUG:logger:('mmiller', 'Martin Miller', 'Boston')
+DEBUG:logger:('ppopov', 'London', 'Peter Popov')
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:20:45] "GET /users/ HTTP/1.1" 200 -
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:21:30] "[31m[1mPUT /users/ HTTP/1.1[0m" 405 -
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 102-069-690
+INFO:logger:PUT /users/<username>
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:21:56] "[31m[1mPUT /users/ssmith HTTP/1.1[0m" 400 -
+INFO:logger:PUT /users/<username>
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:22:15] "[31m[1mPUT /users/ssmith HTTP/1.1[0m" 400 -
+INFO:logger:PUT /users/<username>
+DEBUG:logger:PUT /users/<username> - payload: {'username': 'scottsmith', 'city': 'Raleigh'}
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:22:56] "PUT /users/ssmith HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:('aking', 'Allen King', 'Dallas')
+DEBUG:logger:('jford', 'Jones Ford', 'Chicago')
+DEBUG:logger:('mmiller', 'Martin Miller', 'Boston')
+DEBUG:logger:('ppopov', 'London', 'Peter Popov')
+DEBUG:logger:('ssmith', 'Scott Smith', 'Raleigh')
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:23:00] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:PUT /users/<username>
+DEBUG:logger:PUT /users/<username> - payload: {'city': 'Raleigh'}
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:23:33] "PUT /users/ssmith HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:('aking', 'Allen King', 'Dallas')
+DEBUG:logger:('jford', 'Jones Ford', 'Chicago')
+DEBUG:logger:('mmiller', 'Martin Miller', 'Boston')
+DEBUG:logger:('ppopov', 'London', 'Peter Popov')
+DEBUG:logger:('ssmith', 'Scott Smith', 'Raleigh')
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:23:42] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:PUT /users/<username>
+DEBUG:logger:PUT /users/<username> - payload: {'city': 'Raleigh1'}
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:23:50] "PUT /users/ssmith HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:('aking', 'Allen King', 'Dallas')
+DEBUG:logger:('jford', 'Jones Ford', 'Chicago')
+DEBUG:logger:('mmiller', 'Martin Miller', 'Boston')
+DEBUG:logger:('ppopov', 'London', 'Peter Popov')
+DEBUG:logger:('ssmith', 'Scott Smith', 'Raleigh1')
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:23:52] "GET /users/ HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 102-069-690
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 297-826-753
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:('ssmith', 'Scott Smith', 'New York')
+DEBUG:logger:('aking', 'Allen King', 'Dallas')
+DEBUG:logger:('jford', 'Jones Ford', 'Chicago')
+DEBUG:logger:('mmiller', 'Martin Miller', 'Boston')
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:50:27] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:GET /users/<username>
+DEBUG:logger:username: {username}
+DEBUG:logger:GET /users/<username> - parse
+DEBUG:logger:('ssmith', 'Scott Smith', 'New York')
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:50:29] "GET /users/ssmith/ HTTP/1.1" 200 -
+INFO:logger:GET /users/<username>
+DEBUG:logger:username: {username}
+DEBUG:logger:GET /users/<username> - parse
+DEBUG:logger:('ssmith', 'Scott Smith', 'New York')
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:50:30] "GET /users/ssmith/ HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:('ssmith', 'Scott Smith', 'New York')
+DEBUG:logger:('aking', 'Allen King', 'Dallas')
+DEBUG:logger:('jford', 'Jones Ford', 'Chicago')
+DEBUG:logger:('mmiller', 'Martin Miller', 'Boston')
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:54:50] "GET /users/ HTTP/1.1" 200 -
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:54:55] "[32mGET /users/ssmith HTTP/1.1[0m" 308 -
+INFO:logger:GET /users/<username>
+DEBUG:logger:username: {username}
+DEBUG:logger:GET /users/<username> - parse
+DEBUG:logger:('ssmith', 'Scott Smith', 'New York')
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:54:55] "GET /users/ssmith/ HTTP/1.1" 200 -
+INFO:logger:POST /users
+DEBUG:logger:POST /users - payload: {'username': 'ppopov', 'city': 'London', 'name': 'Peter Popov'}
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:54:58] "POST /users/ HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:('ssmith', 'Scott Smith', 'New York')
+DEBUG:logger:('aking', 'Allen King', 'Dallas')
+DEBUG:logger:('jford', 'Jones Ford', 'Chicago')
+DEBUG:logger:('mmiller', 'Martin Miller', 'Boston')
+DEBUG:logger:('ppopov', 'London', 'Peter Popov')
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:55:02] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:PUT /users/<username>
+DEBUG:logger:PUT /users/<username> - payload: {'city': 'Raleigh'}
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:55:41] "PUT /users/69 HTTP/1.1" 200 -
+INFO:logger:PUT /users/<username>
+DEBUG:logger:PUT /users/<username> - payload: {'city': 'Raleigh'}
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:56:35] "PUT /users/ssmith HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:('aking', 'Allen King', 'Dallas')
+DEBUG:logger:('jford', 'Jones Ford', 'Chicago')
+DEBUG:logger:('mmiller', 'Martin Miller', 'Boston')
+DEBUG:logger:('ppopov', 'London', 'Peter Popov')
+DEBUG:logger:('ssmith', 'Scott Smith', 'Raleigh')
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 01:56:40] "GET /users/ HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 297-826-753
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.27.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 914-062-211
+INFO:logger:GET /users/<username>
+DEBUG:logger:username: {username}
+DEBUG:logger:GET /users/<username> - parse
+DEBUG:logger:('ssmith', 'Scott Smith', 'New York')
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 02:00:48] "GET /users/ssmith/ HTTP/1.1" 200 -
+INFO:logger:GET /users/<username>
+DEBUG:logger:username: {username}
+DEBUG:logger:GET /users/<username> - parse
+DEBUG:logger:('ssmith', 'Scott Smith', 'New York')
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 02:00:51] "GET /users/ssmith/ HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:('ssmith', 'Scott Smith', 'New York')
+DEBUG:logger:('aking', 'Allen King', 'Dallas')
+DEBUG:logger:('jford', 'Jones Ford', 'Chicago')
+DEBUG:logger:('mmiller', 'Martin Miller', 'Boston')
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 02:00:51] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:POST /users
+DEBUG:logger:POST /users - payload: {'city': 'London', 'username': 'ppopov', 'name': 'Peter Popov'}
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 02:01:03] "POST /users/ HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:('ssmith', 'Scott Smith', 'New York')
+DEBUG:logger:('aking', 'Allen King', 'Dallas')
+DEBUG:logger:('jford', 'Jones Ford', 'Chicago')
+DEBUG:logger:('mmiller', 'Martin Miller', 'Boston')
+DEBUG:logger:('ppopov', 'London', 'Peter Popov')
+INFO:werkzeug:192.168.65.1 - - [19/Mar/2024 02:01:06] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 136-812-916
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', None)
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', None)
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', None)
+INFO:werkzeug:172.18.0.1 - - [11/Apr/2024 20:40:56] "GET /users/ HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [11/Apr/2024 20:40:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:logger:GET /users/<username>
+DEBUG:logger:username: {username}
+DEBUG:logger:GET /users/<username> - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+INFO:werkzeug:172.18.0.1 - - [11/Apr/2024 20:41:08] "GET /users/buyer1/ HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.19.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 842-180-070
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', None)
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', None)
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', None)
+INFO:werkzeug:172.19.0.1 - - [11/Apr/2024 20:44:23] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:GET /users/<username>
+DEBUG:logger:username: {username}
+ERROR:logger:GET /users/<username> - error: list index out of range
+INFO:werkzeug:172.19.0.1 - - [11/Apr/2024 20:44:27] "GET /users/buyers/ HTTP/1.1" 200 -
+INFO:logger:GET /users/<username>
+DEBUG:logger:username: {username}
+DEBUG:logger:GET /users/<username> - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+INFO:werkzeug:172.19.0.1 - - [11/Apr/2024 20:44:32] "GET /users/buyer1/ HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 184-305-624
+INFO:logger:GET /users/<username>
+DEBUG:logger:username: {username}
+DEBUG:logger:GET /users/<username> - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+INFO:werkzeug:172.20.0.1 - - [11/Apr/2024 20:50:40] "GET /users/buyer1/ HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', None)
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', None)
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', None)
+INFO:werkzeug:172.20.0.1 - - [11/Apr/2024 20:50:45] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.21.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 136-903-678
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', None)
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', None)
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', None)
+INFO:werkzeug:172.21.0.1 - - [11/Apr/2024 20:51:21] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', None)
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', None)
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', None)
+INFO:werkzeug:172.21.0.1 - - [11/Apr/2024 20:51:22] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', None)
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', None)
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', None)
+INFO:werkzeug:172.21.0.1 - - [11/Apr/2024 20:51:23] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', None)
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', None)
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', None)
+INFO:werkzeug:172.21.0.1 - - [11/Apr/2024 20:51:24] "GET /users/ HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 136-903-678
+INFO:werkzeug:172.21.0.1 - - [11/Apr/2024 20:52:29] "[31m[1mGET /users/ HTTP/1.1[0m" 405 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.125:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 414-376-200
+INFO:werkzeug: * Detected change in 'C:\\Users\\bgazj\\OneDrive\\UNC Charlotte\\Spring 2024\\ITCS 3160\\db-proj-api\\db-proj-api\\python\\app\\demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.19.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 688-647-440
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', None)
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', None)
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', None)
+INFO:werkzeug:172.19.0.1 - - [15/Apr/2024 17:42:58] "GET /users/ HTTP/1.1" 200 -
+INFO:werkzeug:172.19.0.1 - - [15/Apr/2024 17:42:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:172.19.0.1 - - [15/Apr/2024 17:43:04] "[31m[1mGET /auctions/ HTTP/1.1[0m" 405 -
+INFO:werkzeug:172.19.0.1 - - [15/Apr/2024 17:43:07] "[31m[1mGET /auctions/ HTTP/1.1[0m" 405 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', None)
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', None)
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', None)
+INFO:werkzeug:172.19.0.1 - - [15/Apr/2024 17:50:15] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test Auction', 'end_time': '2024-04-30T23:59:59', 'status': 'open'}
+ERROR:logger:POST /auctions/ - error: null value in column "auction_id" of relation "auctions" violates not-null constraint
+DETAIL:  Failing row contains (null, Test Auction, 2024-04-30 23:59:59, open).
+
+INFO:werkzeug:172.19.0.1 - - [15/Apr/2024 17:54:24] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 953-865-607
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test Auction', 'end_time': '2024-04-30T23:59:59', 'status': 'open'}
+INFO:werkzeug:172.20.0.1 - - [15/Apr/2024 17:57:29] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.21.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 134-780-760
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', None)
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', None)
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', None)
+INFO:werkzeug:172.21.0.1 - - [15/Apr/2024 21:06:40] "GET /users/ HTTP/1.1" 200 -
+INFO:werkzeug:172.21.0.1 - - [15/Apr/2024 21:06:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:172.21.0.1 - - [15/Apr/2024 21:07:04] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test Auction', 'end_time': '2024-04-30T23:59:59', 'status': 'open'}
+INFO:werkzeug:172.21.0.1 - - [15/Apr/2024 21:07:59] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:172.21.0.1 - - [15/Apr/2024 21:08:08] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:172.21.0.1 - - [15/Apr/2024 21:08:18] "GET /auctions/list HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 134-780-760
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.22.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 678-250-288
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', None)
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', None)
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', None)
+INFO:werkzeug:172.22.0.1 - - [15/Apr/2024 22:10:56] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:172.22.0.1 - - [15/Apr/2024 22:11:05] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:172.22.0.1 - - [15/Apr/2024 22:11:08] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.22.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-975-854
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test Auction', 'description': 'This is a test auction', 'end_time': '2024-04-30T23:59:59', 'status': 'open'}
+ERROR:logger:POST /auctions/ - error: not all arguments converted during string formatting
+INFO:werkzeug:172.22.0.1 - - [15/Apr/2024 22:31:37] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', None)
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', None)
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', None)
+INFO:werkzeug:172.22.0.1 - - [15/Apr/2024 22:32:30] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:172.22.0.1 - - [15/Apr/2024 22:32:31] "GET /auctions/list HTTP/1.1" 200 -
+INFO:werkzeug:172.22.0.1 - - [15/Apr/2024 22:32:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:172.22.0.1 - - [15/Apr/2024 22:32:40] "[33mGET /buyer1 HTTP/1.1[0m" 404 -
+INFO:werkzeug:172.22.0.1 - - [15/Apr/2024 22:32:42] "[33mGET /buyer1 HTTP/1.1[0m" 404 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', None)
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', None)
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', None)
+INFO:werkzeug:172.22.0.1 - - [15/Apr/2024 22:33:02] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:172.22.0.1 - - [15/Apr/2024 22:33:04] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.125:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-975-854
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test Auction', 'description': 'This is a Test auction', 'end_time': '2024-04-30T23:59:59', 'status': 'open'}
+INFO:werkzeug:172.22.0.1 - - [15/Apr/2024 22:34:33] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:172.22.0.1 - - [15/Apr/2024 22:34:42] "GET /auctions/list HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-975-854
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-975-854
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:172.22.0.1 - - [15/Apr/2024 23:00:52] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 293-401-890
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test Auction', 'description': 'This is a test!!', 'end_time': '2024-04-30T23:59:59', 'status': 'open'}
+INFO:werkzeug:172.18.0.1 - - [15/Apr/2024 23:02:25] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:172.18.0.1 - - [15/Apr/2024 23:02:33] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:172.18.0.1 - - [15/Apr/2024 23:02:35] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:GET /auctions/search/
+INFO:werkzeug:172.18.0.1 - - [15/Apr/2024 23:02:50] "GET /auctions/search/ HTTP/1.1" 200 -
+INFO:logger:GET /auctions/search/
+INFO:werkzeug:172.18.0.1 - - [15/Apr/2024 23:03:03] "GET /auctions/search/ HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [15/Apr/2024 23:03:07] "[33mGET /auctions/search/1/ HTTP/1.1[0m" 404 -
+INFO:werkzeug:172.18.0.1 - - [15/Apr/2024 23:03:10] "[33mGET /auctions/search1 HTTP/1.1[0m" 404 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.107.152.55:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 772-107-773
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 312-684-614
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', None)
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', None)
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', None)
+INFO:werkzeug:172.18.0.1 - - [16/Apr/2024 20:13:13] "GET /users/ HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [16/Apr/2024 20:13:13] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:172.18.0.1 - - [16/Apr/2024 20:13:19] "[31m[1mGET /auctions/ HTTP/1.1[0m" 405 -
+INFO:werkzeug:172.18.0.1 - - [16/Apr/2024 20:13:22] "[33mGET /auction/ HTTP/1.1[0m" 404 -
+INFO:werkzeug:172.18.0.1 - - [16/Apr/2024 20:13:26] "[33mGET /auctions HTTP/1.1[0m" 404 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:172.18.0.1 - - [16/Apr/2024 20:13:43] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test Auction', 'description': 'A beautiful test auction.', 'end_time': '2024-04-30T23:59:59', 'status': 'open'}
+INFO:werkzeug:172.18.0.1 - - [16/Apr/2024 20:24:49] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test Auction 2', 'description': 'A marvelous test auction.', 'end_time': '2024-04-30T23:59:59', 'status': 'open'}
+INFO:werkzeug:172.18.0.1 - - [16/Apr/2024 20:25:23] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': "Ben's auction", 'description': 'This is an auction for Ben.', 'end_time': '2024-04-30T23:59:59', 'status': 'open'}
+INFO:werkzeug:172.18.0.1 - - [16/Apr/2024 20:25:51] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:172.18.0.1 - - [16/Apr/2024 20:25:56] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:GET /auctions/search/
+ERROR:logger:GET /auctions/search/ - error: syntax error at or near "ILIKE"
+LINE 1: SELECT * FROM auctions WHEREdescription ILIKE '%beautiful%'
+                                                ^
+
+INFO:werkzeug:172.18.0.1 - - [16/Apr/2024 20:26:28] "GET /auctions/search/?description=beautiful HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 312-684-614
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.19.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-339-422
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:172.19.0.1 - - [16/Apr/2024 20:28:40] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test Auction', 'description': 'A beautiful test auction.', 'end_time': '2024-04-30T23:59:59', 'status': 'open'}
+INFO:werkzeug:172.19.0.1 - - [16/Apr/2024 20:28:59] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test Auction', 'description': 'A marvelous test auction.', 'end_time': '2024-04-30T23:59:59', 'status': 'open'}
+INFO:werkzeug:172.19.0.1 - - [16/Apr/2024 20:29:27] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': "Ben's Auction", 'description': 'This is an auction for Ben Gazjuk.', 'end_time': '2024-04-30T23:59:59', 'status': 'closed'}
+INFO:werkzeug:172.19.0.1 - - [16/Apr/2024 20:29:57] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:172.19.0.1 - - [16/Apr/2024 20:30:04] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:GET /auctions/search/
+INFO:werkzeug:172.19.0.1 - - [16/Apr/2024 20:30:33] "GET /auctions/search/?description=beautiful HTTP/1.1" 200 -
+INFO:logger:GET /auctions/search/
+INFO:werkzeug:172.19.0.1 - - [16/Apr/2024 20:30:42] "GET /auctions/search/?description=Marvelous HTTP/1.1" 200 -
+INFO:logger:GET /auctions/search/
+INFO:werkzeug:172.19.0.1 - - [16/Apr/2024 20:30:49] "GET /auctions/search/?description=auction HTTP/1.1" 200 -
+INFO:logger:GET /auctions/search/
+INFO:werkzeug:172.19.0.1 - - [16/Apr/2024 20:30:57] "GET /auctions/search/?Title=2 HTTP/1.1" 200 -
+INFO:logger:GET /auctions/search/
+INFO:werkzeug:172.19.0.1 - - [16/Apr/2024 20:31:09] "GET /auctions/search/?Title=2 HTTP/1.1" 200 -
+INFO:logger:GET /auctions/search/
+INFO:werkzeug:172.19.0.1 - - [16/Apr/2024 20:31:33] "GET /auctions/search/?description=ben HTTP/1.1" 200 -
+INFO:logger:GET /auctions/search/
+INFO:werkzeug:172.19.0.1 - - [16/Apr/2024 20:31:40] "GET /auctions/search/?title=auction HTTP/1.1" 200 -
+INFO:logger:GET /auctions/search/
+INFO:werkzeug:172.19.0.1 - - [16/Apr/2024 20:31:56] "GET /auctions/search/?auction_id=3 HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 127-350-701
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:172.20.0.1 - - [16/Apr/2024 20:47:36] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', None)
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', None)
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', None)
+INFO:werkzeug:172.20.0.1 - - [16/Apr/2024 20:47:42] "GET /users/ HTTP/1.1" 200 -
+INFO:werkzeug:172.20.0.1 - - [16/Apr/2024 20:47:52] "[33mGET /buyer2 HTTP/1.1[0m" 404 -
+INFO:werkzeug:172.20.0.1 - - [16/Apr/2024 20:47:55] "[33mGET /buyer2/ HTTP/1.1[0m" 404 -
+INFO:werkzeug:172.20.0.1 - - [16/Apr/2024 20:48:02] "[32mGET /users/buyer2 HTTP/1.1[0m" 308 -
+INFO:logger:GET /users/<username>
+DEBUG:logger:username: {username}
+DEBUG:logger:GET /users/<username> - parse
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', None)
+INFO:werkzeug:172.20.0.1 - - [16/Apr/2024 20:48:02] "GET /users/buyer2/ HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', None)
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', None)
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', None)
+INFO:werkzeug:172.20.0.1 - - [16/Apr/2024 20:48:15] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.21.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 162-006-440
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', 'Seller')
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', 'Buyer')
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', 'Seller')
+INFO:werkzeug:172.21.0.1 - - [16/Apr/2024 20:51:42] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', 'Seller')
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', 'Buyer')
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', 'Seller')
+INFO:werkzeug:172.21.0.1 - - [16/Apr/2024 20:51:45] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', 'Seller')
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', 'Buyer')
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', 'Seller')
+INFO:werkzeug:172.21.0.1 - - [16/Apr/2024 20:51:50] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', 'Seller')
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', 'Buyer')
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', 'Seller')
+INFO:werkzeug:172.21.0.1 - - [16/Apr/2024 20:51:55] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 795-207-727
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', 'Seller')
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', 'Buyer')
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', 'Seller')
+INFO:werkzeug:172.18.0.1 - - [25/Apr/2024 19:59:43] "GET /users/ HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [25/Apr/2024 19:59:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', 'Seller')
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', 'Buyer')
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', 'Seller')
+INFO:werkzeug:172.18.0.1 - - [25/Apr/2024 20:01:56] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:172.18.0.1 - - [25/Apr/2024 20:04:21] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.19.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 136-697-163
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', 'Seller')
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', 'Buyer')
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', 'Seller')
+INFO:werkzeug:172.19.0.1 - - [25/Apr/2024 20:18:52] "GET /users/ HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 136-697-163
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 857-409-639
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', 'Seller')
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', 'Buyer')
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', 'Seller')
+INFO:werkzeug:172.20.0.1 - - [02/May/2024 13:58:52] "GET /users/ HTTP/1.1" 200 -
+INFO:werkzeug:172.20.0.1 - - [02/May/2024 13:58:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:logger:POST /auctions/
+INFO:werkzeug:172.20.0.1 - - [02/May/2024 14:02:07] "[31m[1mPOST /auctions/ HTTP/1.1[0m" 415 -
+INFO:logger:POST /auctions/
+INFO:werkzeug:172.20.0.1 - - [02/May/2024 14:04:53] "[31m[1mPOST /auctions/ HTTP/1.1[0m" 415 -
+INFO:logger:POST /auctions/
+INFO:werkzeug:172.20.0.1 - - [02/May/2024 14:06:40] "[31m[1mPOST /auctions/ HTTP/1.1[0m" 415 -
+INFO:logger:POST /auctions/
+INFO:werkzeug:172.20.0.1 - - [02/May/2024 14:07:28] "[31m[1mPOST /auctions/ HTTP/1.1[0m" 415 -
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test', 'description': 'Test auction', 'end_time': '2024-05-08 12:00:00', 'status': 'open'}
+INFO:werkzeug:172.20.0.1 - - [02/May/2024 14:08:46] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', 'Seller')
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', 'Buyer')
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', 'Seller')
+INFO:werkzeug:172.20.0.1 - - [02/May/2024 14:09:10] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:172.20.0.1 - - [02/May/2024 14:09:20] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:172.20.0.1 - - [02/May/2024 14:10:44] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:GET /users/<username>
+DEBUG:logger:username: {username}
+DEBUG:logger:GET /users/<username> - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+INFO:werkzeug:172.20.0.1 - - [02/May/2024 14:10:47] "GET /users/buyer1/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/bid
+INFO:werkzeug:172.20.0.1 - - [02/May/2024 14:11:01] "[31m[1mPOST /auctions/bid HTTP/1.1[0m" 400 -
+INFO:logger:POST /auctions/bid
+DEBUG:logger:POST /auctions/bid - payload: {'auction_id': 123, 'bid_amount': 100.0, 'buyer_user_id': 100}
+INFO:werkzeug:172.20.0.1 - - [02/May/2024 14:12:20] "[35m[1mPOST /auctions/bid HTTP/1.1[0m" 500 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 102-573-106
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test', 'description': 'Test auction', 'end_time': '2024-05-08 12:00:00', 'status': 'open'}
+INFO:werkzeug:172.18.0.1 - - [02/May/2024 14:17:27] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/bid
+DEBUG:logger:POST /auctions/bid - payload: {'auction_id': 123, 'bid_amount': 100.0, 'buyer_user_id': 100}
+ERROR:logger:POST /auctions/bid - error: null value in column "auction_id" of relation "bids" violates not-null constraint
+DETAIL:  Failing row contains (1, 100, 2024-05-02 14:17:49.718009, 123, null, 100).
+
+INFO:werkzeug:172.18.0.1 - - [02/May/2024 14:17:49] "POST /auctions/bid HTTP/1.1" 200 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:172.18.0.1 - - [02/May/2024 14:18:44] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:POST /auctions/bid
+DEBUG:logger:POST /auctions/bid - payload: {'auction_id': 1, 'bid_amount': 100.0, 'buyer_user_id': 100}
+ERROR:logger:POST /auctions/bid - error: null value in column "auction_id" of relation "bids" violates not-null constraint
+DETAIL:  Failing row contains (2, 100, 2024-05-02 14:18:53.133318, 1, null, 100).
+
+INFO:werkzeug:172.18.0.1 - - [02/May/2024 14:18:53] "POST /auctions/bid HTTP/1.1" 200 -
+INFO:logger:POST /auctions/bid
+DEBUG:logger:POST /auctions/bid - payload: {'auction_id': 123, 'bid_amount': 100.0, 'buyer_user_id': 100}
+ERROR:logger:POST /auctions/bid - error: null value in column "auction_id" of relation "bids" violates not-null constraint
+DETAIL:  Failing row contains (3, 100, 2024-05-02 14:20:02.75685, 123, null, 100).
+
+INFO:werkzeug:172.18.0.1 - - [02/May/2024 14:20:02] "POST /auctions/bid HTTP/1.1" 200 -
+INFO:logger:POST /auctions/bid
+DEBUG:logger:POST /auctions/bid - payload: {'auction_id': 1, 'bid_amount': 100.0, 'buyer_user_id': 100}
+ERROR:logger:POST /auctions/bid - error: null value in column "auction_id" of relation "bids" violates not-null constraint
+DETAIL:  Failing row contains (4, 100, 2024-05-02 14:22:01.225098, 1, null, 100).
+
+INFO:werkzeug:172.18.0.1 - - [02/May/2024 14:22:01] "POST /auctions/bid HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.19.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 191-864-360
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test', 'description': 'Test auction', 'end_time': '2024-05-08 12:00:00', 'status': 'open'}
+INFO:werkzeug:172.19.0.1 - - [02/May/2024 14:27:16] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/bid
+DEBUG:logger:POST /auctions/bid - payload: {'auction_id': 1, 'bid_amount': 100.0, 'buyer_user_id': 100}
+ERROR:logger:POST /auctions/bid - error: null value in column "auction_id" of relation "bids" violates not-null constraint
+DETAIL:  Failing row contains (1, 100, 2024-05-02 14:27:47.890714, 1, null, 100).
+
+INFO:werkzeug:172.19.0.1 - - [02/May/2024 14:27:47] "POST /auctions/bid HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 191-864-360
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 641-927-432
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test', 'description': 'Test auction', 'end_time': '2024-05-08 12:00:00', 'status': 'open'}
+INFO:werkzeug:172.20.0.1 - - [02/May/2024 14:33:45] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/add_item
+INFO:werkzeug:172.20.0.1 - - [02/May/2024 14:36:43] "[31m[1mPOST /auctions/add_item HTTP/1.1[0m" 400 -
+INFO:logger:POST /auctions/add_item
+DEBUG:logger:POST /auctions/add_item - payload: {'auction_id': 1, 'item_name': 'Example Item', 'minimum_price': 50.0, 'seller_user_id': 200}
+ERROR:logger:POST /auctions/add_item - error: insert or update on table "items" violates foreign key constraint "items_fk2"
+DETAIL:  Key (sellers_users_user_id)=(200) is not present in table "sellers".
+
+INFO:werkzeug:172.20.0.1 - - [02/May/2024 14:37:22] "POST /auctions/add_item HTTP/1.1" 200 -
+INFO:logger:GET /users/<username>
+DEBUG:logger:username: {username}
+DEBUG:logger:GET /users/<username> - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+INFO:werkzeug:172.20.0.1 - - [02/May/2024 14:37:40] "GET /users/buyer1/ HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', 'Seller')
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', 'Buyer')
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', 'Seller')
+INFO:werkzeug:172.20.0.1 - - [02/May/2024 14:37:43] "GET /users/ HTTP/1.1" 200 -
+INFO:werkzeug:172.20.0.1 - - [02/May/2024 14:37:43] "[32mGET /users HTTP/1.1[0m" 308 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', 'Seller')
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', 'Buyer')
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', 'Seller')
+INFO:werkzeug:172.20.0.1 - - [02/May/2024 14:37:43] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.21.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 330-531-469
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 330-531-469
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.22.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 334-697-669
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test', 'description': 'Test auction', 'end_time': '2024-05-08 12:00:00', 'status': 'open'}
+INFO:werkzeug:172.22.0.1 - - [02/May/2024 14:42:31] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/add_item
+DEBUG:logger:POST /auctions/add_item - payload: {'auction_id': 1, 'item_name': 'Example Item', 'minimum_price': 50.0, 'users_user_id': 200}
+ERROR:logger:POST /auctions/add_item - error: column "users_users_user_id" of relation "items" does not exist
+LINE 1: ...s (item_name, minimum_price, auctions_auction_id, users_user...
+                                                             ^
+
+INFO:werkzeug:172.22.0.1 - - [02/May/2024 14:42:50] "POST /auctions/add_item HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.23.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 198-947-530
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test', 'description': 'Test auction', 'end_time': '2024-05-08 12:00:00', 'status': 'open'}
+INFO:werkzeug:172.23.0.1 - - [02/May/2024 14:44:54] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/add_item
+DEBUG:logger:POST /auctions/add_item - payload: {'auction_id': 1, 'item_name': 'Example Item', 'minimum_price': 50.0, 'users_user_id': 200}
+ERROR:logger:POST /auctions/add_item - error: insert or update on table "items" violates foreign key constraint "items_fk2"
+DETAIL:  Key (users_user_id)=(200) is not present in table "sellers".
+
+INFO:werkzeug:172.23.0.1 - - [02/May/2024 14:45:02] "POST /auctions/add_item HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 198-947-530
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.24.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 615-314-464
+INFO:logger:POST /users
+INFO:werkzeug:172.24.0.1 - - [02/May/2024 14:55:49] "[31m[1mPOST /users/ HTTP/1.1[0m" 400 -
+INFO:logger:POST /users
+DEBUG:logger:POST /users - payload: {'username': 'example_user', 'role': 'Seller'}
+INFO:werkzeug:172.24.0.1 - - [02/May/2024 14:56:14] "POST /users/ HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', 'Seller')
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', 'Buyer')
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', 'Seller')
+DEBUG:logger:(1, 'example_user', '', '', 'Seller')
+INFO:werkzeug:172.24.0.1 - - [02/May/2024 14:56:20] "GET /users/ HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 615-314-464
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 615-314-464
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.25.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 102-047-003
+INFO:logger:POST /users
+INFO:werkzeug:172.25.0.1 - - [02/May/2024 14:59:07] "[35m[1mPOST /users/ HTTP/1.1[0m" 500 -
+INFO:logger:GET /users/<username>
+DEBUG:logger:username: {username}
+INFO:werkzeug:172.25.0.1 - - [02/May/2024 14:59:50] "[35m[1mGET /users/buyer1/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:172.25.0.1 - - [02/May/2024 14:59:50] "GET /users/buyer1/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:172.25.0.1 - - [02/May/2024 14:59:50] "GET /users/buyer1/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:172.25.0.1 - - [02/May/2024 14:59:50] "GET /users/buyer1/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:172.25.0.1 - - [02/May/2024 14:59:50] "[36mGET /users/buyer1/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:logger:GET /users
+INFO:werkzeug:172.25.0.1 - - [02/May/2024 15:00:01] "[35m[1mGET /users/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:172.25.0.1 - - [02/May/2024 15:00:01] "GET /users/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:172.25.0.1 - - [02/May/2024 15:00:01] "GET /users/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:172.25.0.1 - - [02/May/2024 15:00:01] "GET /users/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:172.25.0.1 - - [02/May/2024 15:00:02] "[36mGET /users/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 491-969-905
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:172.26.0.1 - - [02/May/2024 15:03:46] "[35m[1mGET /auctions/list HTTP/1.1[0m" 500 -
+INFO:werkzeug:172.26.0.1 - - [02/May/2024 15:03:46] "GET /auctions/list?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:172.26.0.1 - - [02/May/2024 15:03:46] "GET /auctions/list?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:172.26.0.1 - - [02/May/2024 15:03:46] "GET /auctions/list?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:172.26.0.1 - - [02/May/2024 15:03:46] "[36mGET /auctions/list?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:logger:GET /users/<username>
+DEBUG:logger:username: {username}
+INFO:werkzeug:172.26.0.1 - - [02/May/2024 15:03:54] "[35m[1mGET /users/buyer1/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:172.26.0.1 - - [02/May/2024 15:03:54] "[36mGET /users/buyer1/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.26.0.1 - - [02/May/2024 15:03:54] "[36mGET /users/buyer1/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.26.0.1 - - [02/May/2024 15:03:54] "[36mGET /users/buyer1/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.26.0.1 - - [02/May/2024 15:03:54] "[36mGET /users/buyer1/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.26.0.1 - - [02/May/2024 15:04:27] "[36mGET /users/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.26.0.1 - - [02/May/2024 15:04:27] "[36mGET /users/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.26.0.1 - - [02/May/2024 15:04:27] "[36mGET /users/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 491-969-905
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.27.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-765-083
+INFO:logger:GET /users
+INFO:werkzeug:172.27.0.1 - - [02/May/2024 15:07:47] "[35m[1mGET /users/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:172.27.0.1 - - [02/May/2024 15:07:47] "[36mGET /users/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.27.0.1 - - [02/May/2024 15:07:47] "[36mGET /users/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.27.0.1 - - [02/May/2024 15:07:47] "[36mGET /users/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.27.0.1 - - [02/May/2024 15:07:47] "[36mGET /users/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:logger:POST /auctions/
+INFO:werkzeug:172.27.0.1 - - [02/May/2024 15:09:15] "[35m[1mPOST /auctions/ HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-765-083
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-765-083
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.27.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 407-680-809
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+INFO:werkzeug:172.27.0.1 - - [02/May/2024 15:12:17] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:GET /users/<username>
+DEBUG:logger:username: {username}
+ERROR:logger:GET /users/<username> - error: list index out of range
+INFO:werkzeug:172.27.0.1 - - [02/May/2024 15:12:20] "GET /users/buyer1/ HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+INFO:werkzeug:172.27.0.1 - - [02/May/2024 15:12:30] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+INFO:werkzeug:172.27.0.1 - - [02/May/2024 15:12:31] "GET /users/ HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 407-680-809
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.28.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 125-805-767
+INFO:logger:POST /users
+INFO:werkzeug:172.28.0.1 - - [02/May/2024 15:15:01] "[35m[1mPOST /users/ HTTP/1.1[0m" 500 -
+INFO:logger:GET /users
+INFO:werkzeug:172.28.0.1 - - [02/May/2024 15:15:24] "[35m[1mGET /users/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:172.28.0.1 - - [02/May/2024 15:15:24] "[36mGET /users/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.28.0.1 - - [02/May/2024 15:15:24] "[36mGET /users/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.28.0.1 - - [02/May/2024 15:15:24] "[36mGET /users/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.28.0.1 - - [02/May/2024 15:15:24] "[36mGET /users/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 125-805-767
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.29.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 261-688-050
+INFO:logger:GET /users
+INFO:logger:GET /users
+INFO:werkzeug:172.29.0.1 - - [02/May/2024 15:16:23] "[35m[1mGET /users/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:172.29.0.1 - - [02/May/2024 15:16:25] "[35m[1mGET /users/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:172.29.0.1 - - [02/May/2024 15:16:26] "[36mGET /users/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.29.0.1 - - [02/May/2024 15:16:26] "[36mGET /users/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.29.0.1 - - [02/May/2024 15:16:26] "[36mGET /users/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.29.0.1 - - [02/May/2024 15:16:26] "[36mGET /users/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 261-688-050
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.30.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 132-093-800
+INFO:logger:GET /users
+INFO:werkzeug:172.30.0.1 - - [02/May/2024 15:17:28] "[35m[1mGET /users/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:172.30.0.1 - - [02/May/2024 15:17:28] "[36mGET /users/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.30.0.1 - - [02/May/2024 15:17:28] "[36mGET /users/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.30.0.1 - - [02/May/2024 15:17:28] "[36mGET /users/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.30.0.1 - - [02/May/2024 15:17:28] "[36mGET /users/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 202-825-024
+INFO:logger:GET /users
+INFO:werkzeug:172.31.0.1 - - [02/May/2024 15:19:15] "[35m[1mGET /users/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:172.31.0.1 - - [02/May/2024 15:19:15] "[36mGET /users/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.31.0.1 - - [02/May/2024 15:19:15] "[36mGET /users/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.31.0.1 - - [02/May/2024 15:19:15] "[36mGET /users/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.31.0.1 - - [02/May/2024 15:19:15] "[36mGET /users/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:logger:GET /users
+INFO:werkzeug:172.31.0.1 - - [02/May/2024 15:19:23] "[35m[1mGET /users/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:172.31.0.1 - - [02/May/2024 15:19:23] "[36mGET /users/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.31.0.1 - - [02/May/2024 15:19:23] "[36mGET /users/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.31.0.1 - - [02/May/2024 15:19:23] "[36mGET /users/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.31.0.1 - - [02/May/2024 15:19:23] "[36mGET /users/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 113-799-576
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', 'Seller')
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', 'Buyer')
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', 'Seller')
+INFO:werkzeug:192.168.0.1 - - [02/May/2024 15:21:03] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:GET /users/<username>
+DEBUG:logger:username: {username}
+DEBUG:logger:GET /users/<username> - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+INFO:werkzeug:192.168.0.1 - - [02/May/2024 15:21:07] "GET /users/buyer1/ HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.16.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 896-993-887
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', 'Seller')
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', 'Buyer')
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', 'Seller')
+INFO:werkzeug:192.168.16.1 - - [02/May/2024 15:22:49] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', 'Seller')
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', 'Buyer')
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', 'Seller')
+INFO:werkzeug:192.168.16.1 - - [02/May/2024 15:22:50] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:POST /users
+DEBUG:logger:POST /users - payload: {'username': 'example_user', 'role': 'Seller'}
+INFO:werkzeug:192.168.16.1 - - [02/May/2024 15:23:12] "POST /users/ HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', 'Seller')
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', 'Buyer')
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', 'Seller')
+DEBUG:logger:(1, 'example_user', '', '', 'Seller')
+INFO:werkzeug:192.168.16.1 - - [02/May/2024 15:23:22] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.32.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 111-874-813
+INFO:logger:GET /users/<username>
+DEBUG:logger:username: {username}
+DEBUG:logger:GET /users/<username> - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+INFO:werkzeug:192.168.32.1 - - [02/May/2024 15:26:21] "GET /users/buyer1/ HTTP/1.1" 200 -
+INFO:logger:POST /users
+DEBUG:logger:POST /users - payload: {'username': 'Ben', 'role': 'Seller'}
+INFO:werkzeug:192.168.32.1 - - [02/May/2024 15:26:49] "POST /users/ HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', 'Seller')
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', 'Buyer')
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', 'Seller')
+DEBUG:logger:(1, 'Ben', '', '', 'Seller')
+INFO:werkzeug:192.168.32.1 - - [02/May/2024 15:26:55] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test', 'description': 'Test auction', 'end_time': '2024-05-08 12:00:00', 'status': 'open'}
+INFO:werkzeug:192.168.32.1 - - [02/May/2024 15:27:44] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:192.168.32.1 - - [02/May/2024 15:27:49] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:POST /auctions/add_item
+DEBUG:logger:POST /auctions/add_item - payload: {'auction_id': 1, 'item_name': 'Example Item', 'minimum_price': 50.0, 'users_user_id': 1}
+INFO:werkzeug:192.168.32.1 - - [02/May/2024 15:28:36] "POST /auctions/add_item HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.48.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 193-178-423
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', 'Seller')
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', 'Buyer')
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', 'Seller')
+INFO:werkzeug:192.168.48.1 - - [02/May/2024 15:31:40] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:POST /users
+DEBUG:logger:POST /users - payload: {'username': 'Ben', 'role': 'Seller'}
+INFO:werkzeug:192.168.48.1 - - [02/May/2024 15:32:00] "POST /users/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test', 'description': 'Test auction', 'end_time': '2024-05-08 12:00:00', 'status': 'open'}
+INFO:werkzeug:192.168.48.1 - - [02/May/2024 15:32:16] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/add_item
+DEBUG:logger:POST /auctions/add_item - payload: {'auction_id': 1, 'item_name': 'Example Item', 'minimum_price': 50.0, 'sellers_user_id': 1}
+INFO:werkzeug:192.168.48.1 - - [02/May/2024 15:32:48] "POST /auctions/add_item HTTP/1.1" 200 -
+INFO:logger:POST /auctions/add_item
+DEBUG:logger:POST /auctions/add_item - payload: {'item_name': 'Example Item', 'minimum_price': 50.0, 'auction_id': 1, 'sellers_user_id': 200}
+INFO:werkzeug:192.168.48.1 - - [02/May/2024 15:34:36] "POST /auctions/add_item HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.80.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 392-324-815
+INFO:werkzeug:192.168.80.1 - - [02/May/2024 15:37:12] "[31m[1mGET /auctions/add_item HTTP/1.1[0m" 405 -
+INFO:logger:POST /users
+DEBUG:logger:POST /users - payload: {'username': 'example_user', 'role': 'Seller'}
+INFO:werkzeug:192.168.80.1 - - [02/May/2024 15:37:16] "POST /users/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test', 'description': 'Test auction', 'end_time': '2024-05-08 12:00:00', 'status': 'open'}
+INFO:werkzeug:192.168.80.1 - - [02/May/2024 15:37:37] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/add_item
+DEBUG:logger:POST /auctions/add_item - payload: {'item_name': 'Example Item', 'minimum_price': 50.0, 'auction_id': 1, 'sellers_user_id': 1}
+INFO:werkzeug:192.168.80.1 - - [02/May/2024 15:37:52] "POST /auctions/add_item HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.96.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 773-047-289
+INFO:logger:POST /users
+DEBUG:logger:POST /users - payload: {'username': 'Ben', 'role': 'Seller'}
+INFO:werkzeug:192.168.96.1 - - [02/May/2024 15:46:08] "POST /users/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test', 'description': 'Test auction', 'end_time': '2024-05-08 12:00:00', 'status': 'open'}
+INFO:werkzeug:192.168.96.1 - - [02/May/2024 15:46:19] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/add_item
+DEBUG:logger:POST /auctions/add_item - payload: {'item_name': 'Example Item', 'minimum_price': 50.0, 'auction_id': 1, 'sellers_user_id': 1}
+INFO:werkzeug:192.168.96.1 - - [02/May/2024 15:46:28] "POST /auctions/add_item HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', 'Seller')
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', 'Buyer')
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', 'Seller')
+DEBUG:logger:(1, 'Ben', '', '', 'Seller')
+INFO:werkzeug:192.168.96.1 - - [02/May/2024 15:47:21] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:POST /users
+DEBUG:logger:POST /users - payload: {'username': 'Austin', 'role': 'Buyer'}
+INFO:werkzeug:192.168.96.1 - - [02/May/2024 15:47:50] "POST /users/ HTTP/1.1" 200 -
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', 'Seller')
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', 'Buyer')
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', 'Seller')
+DEBUG:logger:(1, 'Ben', '', '', 'Seller')
+DEBUG:logger:(2, 'Austin', '', '', 'Buyer')
+INFO:werkzeug:192.168.96.1 - - [02/May/2024 15:47:55] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/bid
+DEBUG:logger:POST /auctions/bid - payload: {'auction_id': 1, 'bid_amount': 100.0, 'buyer_user_id': 2}
+INFO:werkzeug:192.168.96.1 - - [02/May/2024 15:48:24] "[35m[1mPOST /auctions/bid HTTP/1.1[0m" 500 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:192.168.96.1 - - [02/May/2024 15:48:45] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.112.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 472-462-550
+INFO:logger:GET /users
+INFO:werkzeug:192.168.112.1 - - [02/May/2024 15:53:53] "[35m[1mGET /users/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:192.168.112.1 - - [02/May/2024 15:53:53] "[36mGET /users/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.112.1 - - [02/May/2024 15:53:53] "[36mGET /users/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.112.1 - - [02/May/2024 15:53:53] "[36mGET /users/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.112.1 - - [02/May/2024 15:53:53] "[36mGET /users/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.128.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 109-416-769
+INFO:logger:POST /users
+DEBUG:logger:POST /users - payload: {'username': 'Ben', 'role': 'Seller'}
+INFO:werkzeug:192.168.128.1 - - [02/May/2024 15:55:41] "POST /users/ HTTP/1.1" 200 -
+INFO:logger:POST /users
+DEBUG:logger:POST /users - payload: {'username': 'Austin', 'role': 'Buyer'}
+INFO:werkzeug:192.168.128.1 - - [02/May/2024 15:55:57] "POST /users/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test', 'description': 'Test auction', 'end_time': '2024-05-08 12:00:00', 'status': 'open'}
+INFO:werkzeug:192.168.128.1 - - [02/May/2024 15:56:09] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/add_item
+DEBUG:logger:POST /auctions/add_item - payload: {'item_name': 'Example Item', 'minimum_price': 50.0, 'auction_id': 1, 'sellers_user_id': 1}
+INFO:werkzeug:192.168.128.1 - - [02/May/2024 15:56:20] "POST /auctions/add_item HTTP/1.1" 200 -
+INFO:logger:POST /auctions/bid
+DEBUG:logger:POST /auctions/bid - payload: {'auction_id': 1, 'bid_amount': 100.0, 'buyers_user_id': 2}
+INFO:werkzeug:192.168.128.1 - - [02/May/2024 15:57:26] "POST /auctions/bid HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.144.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 171-955-774
+INFO:logger:POST /users
+DEBUG:logger:POST /users - payload: {'username': 'Ben', 'role': 'Seller'}
+INFO:werkzeug:192.168.144.1 - - [02/May/2024 16:02:16] "POST /users/ HTTP/1.1" 200 -
+INFO:logger:POST /users
+DEBUG:logger:POST /users - payload: {'username': 'Zach', 'role': 'Buyer'}
+INFO:werkzeug:192.168.144.1 - - [02/May/2024 16:02:29] "POST /users/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test', 'description': 'Test auction', 'end_time': '2024-05-08 12:00:00', 'status': 'open'}
+INFO:werkzeug:192.168.144.1 - - [02/May/2024 16:02:46] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/add_item
+DEBUG:logger:POST /auctions/add_item - payload: {'item_name': 'Example Item', 'minimum_price': 50.0, 'auction_id': 1, 'sellers_user_id': 1}
+INFO:werkzeug:192.168.144.1 - - [02/May/2024 16:03:02] "POST /auctions/add_item HTTP/1.1" 200 -
+INFO:logger:POST /auctions/bid
+DEBUG:logger:POST /auctions/bid - payload: {'auction_id': 1, 'bid_amount': 100.0, 'buyers_user_id': 2}
+INFO:werkzeug:192.168.144.1 - - [02/May/2024 16:03:19] "[35m[1mPOST /auctions/bid HTTP/1.1[0m" 500 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:192.168.144.1 - - [02/May/2024 16:03:34] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:192.168.144.1 - - [02/May/2024 16:03:35] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:192.168.144.1 - - [02/May/2024 16:03:35] "GET /auctions/list HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 171-955-774
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.160.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 101-620-630
+INFO:logger:POST /users
+DEBUG:logger:POST /users - payload: {'username': 'Ben', 'role': 'Seller'}
+INFO:werkzeug:192.168.160.1 - - [02/May/2024 16:07:26] "POST /users/ HTTP/1.1" 200 -
+INFO:logger:POST /users
+DEBUG:logger:POST /users - payload: {'username': 'Zach', 'role': 'Buyer'}
+INFO:werkzeug:192.168.160.1 - - [02/May/2024 16:07:37] "POST /users/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test', 'description': 'Test auction', 'end_time': '2024-05-08 12:00:00', 'status': 'open'}
+INFO:werkzeug:192.168.160.1 - - [02/May/2024 16:07:46] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/add_item
+DEBUG:logger:POST /auctions/add_item - payload: {'item_name': 'Example Item', 'minimum_price': 50.0, 'auction_id': 1, 'sellers_user_id': 1}
+INFO:werkzeug:192.168.160.1 - - [02/May/2024 16:07:55] "POST /auctions/add_item HTTP/1.1" 200 -
+INFO:logger:POST /auctions/bid
+DEBUG:logger:POST /auctions/bid - payload: {'auction_id': 1, 'bid_amount': 100.0, 'buyers_user_id': 2}
+INFO:werkzeug:192.168.160.1 - - [02/May/2024 16:08:03] "POST /auctions/bid HTTP/1.1" 200 -
+INFO:logger:POST /auctions/bid
+DEBUG:logger:POST /auctions/bid - payload: {'auctions_auction_id': 1, 'bid_amount': 100.0, 'buyers_user_id': 2}
+ERROR:logger:POST /auctions/bid - error: null value in column "auctions_auction_id" of relation "bids" violates not-null constraint
+DETAIL:  Failing row contains (1, 100, 2024-05-02 16:09:13.219141, 1, 2, null).
+
+INFO:werkzeug:192.168.160.1 - - [02/May/2024 16:09:13] "POST /auctions/bid HTTP/1.1" 200 -
+INFO:logger:POST /auctions/bid
+INFO:werkzeug:192.168.160.1 - - [02/May/2024 16:11:01] "[31m[1mPOST /auctions/bid HTTP/1.1[0m" 400 -
+INFO:logger:POST /auctions/bid
+INFO:werkzeug:192.168.160.1 - - [02/May/2024 16:11:17] "[31m[1mPOST /auctions/bid HTTP/1.1[0m" 400 -
+INFO:logger:POST /auctions/bid
+DEBUG:logger:POST /auctions/bid - payload: {'auctions_auction_id': 1, 'items_item_id': 1, 'bid_amount': 100.0, 'buyers_user_id': 2}
+ERROR:logger:POST /auctions/bid - error: null value in column "auctions_auction_id" of relation "bids" violates not-null constraint
+DETAIL:  Failing row contains (2, 100, 2024-05-02 16:11:46.259548, 1, 2, null).
+
+INFO:werkzeug:192.168.160.1 - - [02/May/2024 16:11:46] "POST /auctions/bid HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 101-620-630
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.176.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 123-526-246
+INFO:logger:POST /users
+DEBUG:logger:POST /users - payload: {'username': 'Ben', 'role': 'Buyer'}
+INFO:werkzeug:192.168.176.1 - - [02/May/2024 16:14:19] "POST /users/ HTTP/1.1" 200 -
+INFO:logger:POST /users
+DEBUG:logger:POST /users - payload: {'username': 'Zach', 'role': 'Buyer'}
+INFO:werkzeug:192.168.176.1 - - [02/May/2024 16:14:29] "POST /users/ HTTP/1.1" 200 -
+INFO:logger:POST /users
+DEBUG:logger:POST /users - payload: {'username': 'Austin', 'role': 'Seller'}
+INFO:werkzeug:192.168.176.1 - - [02/May/2024 16:14:42] "POST /users/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test', 'description': 'Test auction', 'end_time': '2024-05-08 12:00:00', 'status': 'open'}
+INFO:werkzeug:192.168.176.1 - - [02/May/2024 16:14:53] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/add_item
+DEBUG:logger:POST /auctions/add_item - payload: {'item_name': 'Example Item', 'minimum_price': 50.0, 'auction_id': 1, 'sellers_user_id': 3}
+INFO:werkzeug:192.168.176.1 - - [02/May/2024 16:15:07] "POST /auctions/add_item HTTP/1.1" 200 -
+INFO:logger:POST /auctions/bid
+DEBUG:logger:POST /auctions/bid - payload: {'auctions_auction_id': 1, 'items_item_id': 1, 'bid_amount': 100.0, 'buyers_user_id': 2}
+ERROR:logger:POST /auctions/bid - error: 'auction_id'
+INFO:werkzeug:192.168.176.1 - - [02/May/2024 16:15:21] "POST /auctions/bid HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/app/demo-proj.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 123-526-246
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.192.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 531-790-054
+INFO:logger:GET /users
+DEBUG:logger:GET /users - parse
+DEBUG:logger:(100, 'buyer1', 'password1', 'buyer1@gmail.com', 'Buyer')
+DEBUG:logger:(200, 'seller1', 'password2', 'seller1@gmail.com', 'Seller')
+DEBUG:logger:(300, 'buyer2', 'password3', 'buyer2@gmail.com', 'Buyer')
+DEBUG:logger:(400, 'seller2', 'password4', 'seller2@gmail.com', 'Seller')
+INFO:werkzeug:192.168.192.1 - - [02/May/2024 16:18:50] "GET /users/ HTTP/1.1" 200 -
+INFO:logger:POST /users
+DEBUG:logger:POST /users - payload: {'username': 'Ben', 'role': 'Seller'}
+INFO:werkzeug:192.168.192.1 - - [02/May/2024 16:19:25] "POST /users/ HTTP/1.1" 200 -
+INFO:logger:POST /users
+DEBUG:logger:POST /users - payload: {'username': 'Zach', 'role': 'Buyer'}
+INFO:werkzeug:192.168.192.1 - - [02/May/2024 16:19:35] "POST /users/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test', 'description': 'Test auction', 'end_time': '2024-05-08 12:00:00', 'status': 'open'}
+INFO:werkzeug:192.168.192.1 - - [02/May/2024 16:19:44] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/add_item
+DEBUG:logger:POST /auctions/add_item - payload: {'item_name': 'Example Item', 'minimum_price': 50.0, 'auction_id': 1, 'sellers_user_id': 1}
+INFO:werkzeug:192.168.192.1 - - [02/May/2024 16:19:52] "POST /auctions/add_item HTTP/1.1" 200 -
+INFO:logger:POST /auctions/bid
+DEBUG:logger:POST /auctions/bid - payload: {'auctions_auction_id': 1, 'items_item_id': 1, 'bid_amount': 100.0, 'buyers_user_id': 2}
+ERROR:logger:POST /auctions/bid - error: 'buyer_user_id'
+INFO:werkzeug:192.168.192.1 - - [02/May/2024 16:20:02] "POST /auctions/bid HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.208.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 399-314-411
+INFO:logger:POST /users
+DEBUG:logger:POST /users - payload: {'username': 'Ben', 'role': 'Seller'}
+INFO:werkzeug:192.168.208.1 - - [02/May/2024 16:53:05] "POST /users/ HTTP/1.1" 200 -
+INFO:logger:POST /users
+DEBUG:logger:POST /users - payload: {'username': 'Zach', 'role': 'Buyer'}
+INFO:werkzeug:192.168.208.1 - - [02/May/2024 16:53:17] "POST /users/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test', 'description': 'Test auction', 'end_time': '2024-05-08 12:00:00', 'status': 'open'}
+INFO:werkzeug:192.168.208.1 - - [02/May/2024 16:53:30] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/add_item
+DEBUG:logger:POST /auctions/add_item - payload: {'item_name': 'Example Item', 'minimum_price': 50.0, 'auction_id': 1, 'sellers_user_id': 1}
+INFO:werkzeug:192.168.208.1 - - [02/May/2024 16:53:38] "POST /auctions/add_item HTTP/1.1" 200 -
+INFO:logger:POST /auctions/bid
+DEBUG:logger:POST /auctions/bid - payload: {'auctions_auction_id': 1, 'items_item_id': 1, 'bid_amount': 100.0, 'buyers_user_id': 2}
+INFO:werkzeug:192.168.208.1 - - [02/May/2024 16:53:45] "POST /auctions/bid HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.224.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 771-552-369
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test', 'description': 'Test auction', 'end_time': '2024-05-08 12:00:00', 'status': 'open'}
+INFO:werkzeug:192.168.224.1 - - [02/May/2024 16:57:56] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:192.168.224.1 - - [02/May/2024 16:58:04] "GET /auctions/list HTTP/1.1" 200 -
+INFO:werkzeug:192.168.224.1 - - [02/May/2024 16:58:14] "[31m[1mPOST /auctions/close/123/ HTTP/1.1[0m" 405 -
+INFO:logger:PUT /auctions/close/1
+INFO:werkzeug:192.168.224.1 - - [02/May/2024 16:58:30] "PUT /auctions/close/1/ HTTP/1.1" 200 -
+INFO:logger:PUT /auctions/close/1
+INFO:werkzeug:192.168.224.1 - - [02/May/2024 16:58:41] "PUT /auctions/close/1/ HTTP/1.1" 200 -
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test', 'description': 'Test auction', 'end_time': '2024-05-02 12:00:00', 'status': 'open'}
+INFO:werkzeug:192.168.224.1 - - [02/May/2024 16:59:36] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:PUT /auctions/close/2
+ERROR:logger:PUT /auctions/close/2 - error: column "auction_id" does not exist
+LINE 1: ...rs_users_user_id, MAX(bid_amount) FROM bids WHERE auction_id...
+                                                             ^
+
+INFO:werkzeug:192.168.224.1 - - [02/May/2024 17:00:05] "PUT /auctions/close/2/ HTTP/1.1" 200 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:192.168.224.1 - - [02/May/2024 17:00:22] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:192.168.224.1 - - [02/May/2024 17:00:23] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test', 'description': 'Test auction', 'end_time': '2024-05-03 12:00:00', 'status': 'open'}
+INFO:werkzeug:192.168.224.1 - - [02/May/2024 17:00:46] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:192.168.224.1 - - [02/May/2024 17:00:50] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:PUT /auctions/close/123
+ERROR:logger:PUT /auctions/close/123 - error: 'NoneType' object is not subscriptable
+INFO:werkzeug:192.168.224.1 - - [02/May/2024 17:01:03] "PUT /auctions/close/123/ HTTP/1.1" 200 -
+INFO:logger:PUT /auctions/close/3
+INFO:werkzeug:192.168.224.1 - - [02/May/2024 17:01:10] "PUT /auctions/close/3/ HTTP/1.1" 200 -
+INFO:logger:PUT /auctions/cancel/1
+ERROR:logger:PUT /auctions/cancel/1 - error: column "auction_id" does not exist
+LINE 1: ...ECT DISTINCT buyers_users_user_id FROM bids WHERE auction_id...
+                                                             ^
+
+INFO:werkzeug:192.168.224.1 - - [02/May/2024 17:01:33] "PUT /auctions/cancel/1/ HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.240.3:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.1 online: http://localhost:8080/users/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 770-361-121
+INFO:logger:POST /auctions/
+DEBUG:logger:POST /auctions/ - payload: {'title': 'Test', 'description': 'Test auction', 'end_time': '2024-05-03 12:00:00', 'status': 'open'}
+INFO:werkzeug:192.168.240.1 - - [02/May/2024 17:04:14] "POST /auctions/ HTTP/1.1" 200 -
+INFO:logger:PUT /auctions/cancel/1
+INFO:werkzeug:192.168.240.1 - - [02/May/2024 17:04:35] "PUT /auctions/cancel/1/ HTTP/1.1" 200 -
+INFO:logger:GET /auctions/open/
+INFO:werkzeug:192.168.240.1 - - [02/May/2024 17:04:40] "GET /auctions/list HTTP/1.1" 200 -
+INFO:logger:GET /auctions/search/
+INFO:werkzeug:192.168.240.1 - - [02/May/2024 17:05:50] "GET /auctions/search/?auction_id=1 HTTP/1.1" 200 -
